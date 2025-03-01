@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style3.css">
+    <title>Profil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1 class="Bienvenue">Bienvenue sur le profil de <span id="nomAffiche" class="nompersonne"></span> !</h1>
+
+    <img id="profilePhoto" src="" alt="Photo de profil" class="photopp" style="display:none;">
+    <p><strong>Âge :</strong> <span id="age"></span> ans</p>
+    <p><strong>Taille :</strong> <span id="taille"></span> cm</p>
+    <p><strong>Poids :</strong> <span id="poids"></span> kg</p>
+    <p><strong>Sexe :</strong> <span id="profilSexe"></span></p>
+
+    <button id="deconnexion">Se déconnecter</button>
+    <div class="menu" id="menu">
+        <a href="#">Accueil</a>
+        <a href="inscription.html" id="entrainement">Entraînements</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <script>
+document.getElementById("deconnexion").addEventListener("click", function () {
+    // Supprimer seulement la clé 'dernierUtilisateur' pour déconnecter
+    localStorage.removeItem("dernierUtilisateur");
+
+    // Optionnellement, tu peux aussi rediriger vers la page d'accueil ou de connexion
+    window.location.href = "http://127.0.0.1:5500/index.htm"; // Par exemple
+});
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Récupération des données du localStorage
+            const nom = localStorage.getItem("nom");
+            const age = localStorage.getItem("age");
+            const taille = localStorage.getItem("taille");
+            const poids = localStorage.getItem("poids");
+            const sexe = localStorage.getItem("sexe");
+            const photo = localStorage.getItem("photo");
+
+            // Vérification et affichage des données
+            if (nom) {
+                // Afficher le nom
+                document.getElementById("nomAffiche").textContent = nom;
+                document.getElementById("age").textContent = age;
+                document.getElementById("taille").textContent = taille;
+                document.getElementById("poids").textContent = poids;
+                document.getElementById("profilSexe").textContent = sexe ? sexe : 'Non spécifié'; // Si sexe est null ou vide
+
+                // Affichage de la photo de profil si elle existe
+                if (photo) {
+                    const profilePhoto = document.getElementById("profilePhoto");
+                    profilePhoto.src = photo; // Utilisation de la variable photo
+                    profilePhoto.style.display = "block"; // Affichage de l'image
+                }
+            } else {
+                document.body.innerHTML = "<h1>Profil introuvable</h1>";
+                setTimeout(() => { window.location.href = "inscription.html"; }, 2000);
+            }
+        });
+    </script>
+
+</body>
+</html>

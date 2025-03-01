@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entraînement</title>
+    <script>
+        // Fonction pour récupérer le nom depuis localStorage
+        window.onload = function() {
+            const nom = localStorage.getItem("nom");
+            if (nom) {
+                document.getElementById("welcome-message").innerText = "Bienvenue, " + nom + " !";
+            } else {
+                window.location.href = "inscription.html";
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="welcome-message">Bienvenue !</h1>
+    <p>Bienvenue sur la page Entraînement.</p>
+</body>
+</html>

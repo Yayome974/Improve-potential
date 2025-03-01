@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style2.css">
+    <title>Inscription</title>
+    
+    <script>
+        function enregistrerInformations() {
+            const nom = document.getElementById("nom").value;
+            const age = document.getElementById("age").value;
+            const taille = document.getElementById("taille").value;
+            const poids = document.getElementById("poids").value;
+            const sexe = document.querySelector('input[name="sexe"]:checked').value; // Récupère le sexe sélectionné
+            const photoInput = document.getElementById("photo");
+
+            if (!nom) {
+                alert("Veuillez entrer un nom !");
+                return;
+            }
+
+            if (photoInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const photoBase64 = event.target.result; // Convertir en Base64
+
+                    // Stocker les infos dans localStorage
+                    const userData = { age, taille, poids, sexe, photo: photoBase64 };
+                    localStorage.setItem(nom, JSON.stringify(userData)); // Stocke les données sous le nom de l'utilisateur
+                    localStorage.setItem("nom", nom); // Stocke aussi le nom
+                    localStorage.setItem("age", age);
+                    localStorage.setItem("taille", taille);
+                    localStorage.setItem("poids", poids);
+                    localStorage.setItem("sexe", sexe);
+                    localStorage.setItem("photo", photoBase64); // Stocke la photo en base64
+                    localStorage.setItem("dernierUtilisateur", nom); // Enregistre le nom sous la clé "dernierUtilisateur"
+
+                    // Rediriger vers la page profil
+                    window.location.href = `profil.html?nom=${encodeURIComponent(nom)}`;
+                };
+                reader.readAsDataURL(photoInput.files[0]); // Lire l'image
+            } else {
+                alert("Veuillez choisir une photo de profil !");
+            }
+        }
+
+        function seConnecter() {
+            const dernierUtilisateur = localStorage.getItem("dernierUtilisateur");
+
+            if (dernierUtilisateur) {
+                // Si un utilisateur est trouvé, redirige vers la page de profil
+                window.location.href = `profil.html?nom=${encodeURIComponent(dernierUtilisateur)}`;
+            } else {
+                alert("Aucun utilisateur trouvé ! Veuillez d'abord vous inscrire.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 class="inscription">Inscription</h1>
+    <form onsubmit="event.preventDefault(); enregistrerInformations();">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="age">Âge:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="taille">Taille (en cm):</label>
+        <input type="number" id="taille" name="taille" required><br>
+
+        <label for="poids">Poids (en kg):</label>
+        <input type="number" id="poids" name="poids" required><br>
+
+        <label for="sexe">Sexe :</label><br>
+        <label>
+            <input type="radio" name="sexe" value="homme" required>Homme
+        </label>
+        <label>
+            <input type="radio" name="sexe" value="femme" required> Femme
+        </label><br>
+
+        <label for="photo">Photo de profil</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required><br><br>
+        
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    <br>
+    <div class="container"></div>
+    <img src="https://framerusercontent.com/images/vZveQNKkZpWYHM1NPxiOzMboNU8.webp?scale-down-to=1024" class="imagefemme">
+
+    <!-- Ajouter le bouton de connexion -->
+    <br>
+    <button id="btnConnecter" onclick="seConnecter()">Se connecter</button>
+</body>
+</html>

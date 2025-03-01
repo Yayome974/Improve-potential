@@ -1,0 +1,146 @@
+.inscription {
+    margin: 0;
+    padding: 0;
+    color: #373737;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    line-height: 6rem;
+    position: absolute;
+    top: 50%; /* Centrer verticalement */
+    left: 55%; /* Centrer horizontalement */
+    transform: translate(-50%, -50%) rotate(-90deg); /* Rotation de 45 degrés et centrage */
+    display: inline-block; /* Nécessaire pour appliquer la transformation */
+}
+.Bienvenue {
+    margin: 0;
+    padding: 0;
+    color: #373737;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    line-height: 6rem;
+    position: absolute;
+    top: 7%; /* Centrer verticalement */
+    margin-left: 20px;
+    margin-right: 100px;
+
+}
+
+.photopp {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    display: none;
+    top: 10%;
+    position: absolute;
+    border: 5px solid #0056b3; /* Définir la largeur de la bordure */
+}
+
+.nompersonne {
+    color: #0056b3;
+}
+
+/* Styles généraux */
+body {
+    background-color: #e4c0a287;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    padding-right: 50px;
+}
+
+
+
+/* Formulaire */
+form {
+    background: rgba(255, 255, 255, 0.89);
+    padding: 90px;
+    padding-bottom: 17px;
+    padding-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 6%;
+    right: 120px;
+
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+/* Styliser le label pour le champ "Sexe" */
+form label[for="sexe"] {
+    font-weight: bold; /* Texte en gras */
+    font-size: 20px;  /* Taille de la police */
+    color: #333;      /* Couleur du texte */
+    display: block;   /* Affichage sur une nouvelle ligne */
+    margin-bottom: 10px; /* Espacement sous le label */
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: right;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    align-self: flex-end;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Lien */
+a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container { 
+    position: relative;
+}
+
+.imagefemme {
+    position: absolute;
+    left: 0px;
+    width: 45%;
+    animation: float 10s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+    100% { transform: translateY(0);}
+}

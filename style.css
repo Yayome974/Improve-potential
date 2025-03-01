@@ -1,0 +1,268 @@
+body {
+    background-image: url(pexels-kammeran-gonzalez-keola-3137381-5441742.jpg);
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Empêche la répétition */
+    background-color: rgb(72, 72, 72);
+    
+}
+
+body {
+    background-color: #202020;
+    height: 200vh;
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Monument Extended';
+    margin: 0;
+    padding: 0;
+    
+    .grain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;  
+      pointer-events: none;
+      z-index: 300;
+      transform: translateZ(0);
+      
+      &:before {
+        content: "";
+        top: -10rem;
+        left: -10rem;
+        width: calc(100% + 20rem);
+        height: calc(100% + 20rem);
+        z-index: 9999;
+        position: fixed;
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+        opacity: 0.15;
+        pointer-events: none;
+        -webkit-animation: noise 1s steps(2) infinite;
+        animation: noise 1s steps(2) infinite;
+      }
+  
+      @-webkit-keyframes noise {
+        to { transform: translate3d(-7rem,0,0) }
+      }
+  
+      @keyframes noise {
+        0% { transform: translate3d(0,9rem,0) }
+        10% { transform: translate3d(-1rem,-4rem,0) }
+        20% { transform: translate3d(-8rem,2rem,0) }
+        30% { transform: translate3d(9rem,-9rem,0) }
+        40% { transform: translate3d(-2rem,7rem,0) }
+        50% { transform: translate3d(-9rem,-4rem,0) }
+        60% { transform: translate3d(2rem,6rem,0) }
+        70% { transform: translate3d(7rem,-8rem,0) }
+        80% { transform: translate3d(-9rem,1rem,0) }
+        90% { transform: translate3d(6rem,-5rem,0) }
+        to { transform: translate3d(-7rem,0,0) }
+      }
+    }
+    
+    h2 {
+      margin: 100px auto;
+      padding: 0;
+      width: 90vw;
+      color: white;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 4rem;
+      letter-spacing: 0.1rem;
+      line-height: 6rem;
+      
+    }
+    .selection {
+      top: 90%;
+      position: relative;
+      color: rgb(45, 45, 45);
+    }
+    .présentationtxt {
+      font-size: 20px;
+      z-index: 10000;
+      top: 76%;
+      position: absolute;
+      left: 5%;
+      font-family: "Roboto Condensed", serif;
+      font-optical-sizing: auto;
+      font-weight:600 ;
+      font-style: normal;
+      letter-spacing: 0.1rem;
+      line-height: 2rem;
+      
+    }
+    .image1 {
+      position: absolute;
+      background-image: url('Design\ sans\ titre.png');
+      background-repeat: no-repeat;
+      z-index: 10000;
+      height: 50%;
+      width: 40%;
+      top: 55%;
+      right: 6%;
+      border-radius: 20px;
+      background-size: cover;
+
+      
+    }
+    
+    .homme {
+      position: absolute;
+      background-image: url('homme.png');
+      background-repeat: no-repeat;
+      z-index: 10000;
+      height: 40%;
+      width: 40%;
+      top: 130%;
+      left:5%;
+      background-size: cover;
+      background-position: center; /* Centrer l'image à l'intérieur du conteneur */
+      border:dashed 3px;
+      padding: 0;
+      cursor:pointer;
+  }
+  
+  
+  
+  
+    .femme {
+      position: absolute;
+      background-image: url('homme.png');
+      background-repeat: no-repeat;
+      z-index: 10000;
+      height: 40%;
+      width: 40%;
+      top: 130%;
+      right: 6%;
+      background-size: cover;
+      background-position: center; /* Centrer l'image à l'intérieur du conteneur */
+      border:dashed 3px;
+      padding: 0;
+      background-size: cover;
+      cursor:pointer;
+    }
+  .imagefort {
+    top: 63%;
+    position: relative;
+    left: 5%;
+  }
+    h1 {
+        margin: 100px auto;
+      padding: 0;
+      padding-top: 20px;
+      width: 90vw;
+      color: white;
+      font-weight: 200;
+      text-transform: uppercase;
+      font-size: 6rem;
+      letter-spacing: 0.5rem;
+      line-height: 8rem;
+      font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    }
+    
+   
+    
+    section {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 100vh;
+      height: 1005vh;
+      width: 100vw;
+      background-color: #eaeaea;
+      
+      h2 {
+        color: black;
+      }
+    }
+    .menu {
+        position: fixed; /* Fixe le menu en haut */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(122, 122, 122, 0);
+        padding: 15px 0;
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Centre les liens horizontalement */
+        gap: 20px; /* Espacement entre les liens */
+        z-index: 1000;
+        transition: top 0.5s ease;
+        transition: transform 0.3s ease-in-out; /* Animation ajoutée */
+    }
+   
+    
+    /* Animation pour cacher le menu (déplacement vers le haut) */
+    .menu.hidden {
+        transform: translateY(-100%); /* Cache le menu */
+    }
+    
+    
+    .menu a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
+        font-size: 21px;
+    }
+    
+    .menu a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+    
+  
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.button {
+    border-radius: 20px;
+    border: 2px solid white;  /* Bordure blanche */
+    background-color: rgba(32, 32, 32, 0.5);  /* Fond transparent avec un léger fond sombre */
+    color: white;  /* Couleur du texte */
+    padding: 10px 30px;  /* Espacement intérieur, corrige le padding */
+    font-size: 20px;
+    position: absolute;
+    transition: all 0.3s ease;  /* Transition fluide */
+    cursor: pointer;  /* Curseur pointer pour le bouton */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Ombre portée subtile */
+    left: 5%;
+    top: 20%;
+  }
+  
+  .button:hover {
+    background-color: rgba(32, 32, 32, 0.7);  /* Légère couleur de fond lors du survol */
+    transform: translateY(-5px);  /* Effet de mouvement au survol */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);  /* Ombre plus marquée au survol */
+    padding: 10px 50px;
+
+  }
+  .button:hover::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px; /* Ajuste la taille du texte */
+  }
+  
+  .button:active {
+    transform: translateY(2px);  /* Effet d'enfoncement lors du clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);  /* Ombre plus légère lors du clic */
+  }
+
+  
+  

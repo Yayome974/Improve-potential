@@ -1,0 +1,168 @@
+
+.Bienvenue {
+    margin: 0;
+    padding: 0;
+    color: #373737;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    line-height: 6rem;
+    position: absolute;
+    top: 10%; /* Centrer verticalement */
+    margin-left: 20px;
+    margin-right: 130px;
+    
+
+}
+
+.photopp {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    display: none;
+    top: 10%;
+    position: absolute;
+    border: 5px solid #cecece; /* Définir la largeur de la bordure */
+}
+
+.photopp:hover {
+    border: 5px solid #277ac8; /* Définir la largeur de la bordure */
+
+}
+.nompersonne {
+    color: #0056b3;
+}
+
+/* Styles généraux */
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    padding-right: 50px;
+}
+
+
+
+/* Formulaire */
+form {
+    background: rgba(255, 255, 255, 0.89);
+    padding: 90px;
+    padding-bottom: 17px;
+    padding-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 6%;
+    right: 120px;
+
+}
+p {
+    font-size: 20px;
+    right: 90%;
+    position: relative;
+    margin-bottom: 5px;
+    border: 2px dashed #a1bfdf; /* Définir la largeur de la bordure */    
+}
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px;
+
+}
+
+/* Styliser le label pour le champ "Sexe" */
+form label[for="sexe"] {
+    font-weight: bold; /* Texte en gras */
+    font-size: 20px;  /* Taille de la police */
+    color: #333;      /* Couleur du texte */
+    display: block;   /* Affichage sur une nouvelle ligne */
+    margin-bottom: 10px; /* Espacement sous le label */
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: right;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    align-self: flex-end;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+section {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 100vh;
+    height: 1005vh;
+    width: 100vw;
+    background-color: #eaeaea;
+    
+    h2 {
+      color: black;
+    }
+  }
+  .menu {
+      position: fixed; /* Fixe le menu en haut */
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(122, 122, 122, 0);
+      padding: 15px 0;
+      text-align: center;
+      display: flex;
+      justify-content: center; /* Centre les liens horizontalement */
+      gap: 20px; /* Espacement entre les liens */
+      z-index: 1000;
+      transition: top 0.5s ease;
+      transition: transform 0.3s ease-in-out; /* Animation ajoutée */
+  }
+ 
+  
+  /* Animation pour cacher le menu (déplacement vers le haut) */
+  .menu.hidden {
+      transform: translateY(-100%); /* Cache le menu */
+  }
+  
+  
+  .menu a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      font-size: 21px;
+  }
+  
+  .menu a:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+  }
+
+
+  
+
+

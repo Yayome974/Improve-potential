@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improve Potential</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <h1>L'effort crée<br>les forts</h1>
+
+    <section>
+        <h2>Transformez <br>votre potentiel <br>dès aujourd'hui</h2>
+    </section>
+
+    <!-- Menu avec correction du lien entraînement -->
+    <div class="menu" id="menu">
+        <a href="#">Accueil</a>
+        <a href="inscription.html" id="entrainement">Entraînements</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <h2 class="selection">Sélectionne ton genre :</h2>
+    <div class="homme" data-aos="fade-up"></div>
+    <div class="femme" data-aos="fade-up"></div>
+    
+    <button class="button">Stats now</button>
+    <h3 class="présentationtxt">
+        Un programme de performance avancé comprenant de nombreux <br>
+        entraînements adaptés à votre niveau grâce à un algorithme de pointe. <br>
+        En effet, notre nouvelle technologie permet un suivi précis en <br>
+        fonction de plusieurs facteurs comme votre âge, votre poids..., <br>
+        mais également en fonction du genre.
+    </h3>
+
+    <div class="image1" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        data-aos-duration="3000"></div>
+    <img width="50" height="50" class="imagefort"
+        src="https://img.icons8.com/ios/50/strength.png" alt="strength"/>
+
+    <script>
+        let lastScrollTop = 0;
+        let menu = document.querySelector(".menu");
+
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.scrollY;
+            if (scrollTop > 300) {
+                menu.classList.add("hidden");
+            } else {
+                menu.classList.remove("hidden");
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Redirige vers profil si l'utilisateur est inscrit
+        document.addEventListener("DOMContentLoaded", function () {
+            const lienEntrainement = document.getElementById("entrainement");
+            const dernierUtilisateur = localStorage.getItem("dernierUtilisateur");
+
+            if (dernierUtilisateur) {
+                lienEntrainement.href = `profil.html?nom=${encodeURIComponent(dernierUtilisateur)}`;
+            } else {
+                lienEntrainement.href = "inscription.html";
+            }
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>
